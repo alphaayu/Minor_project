@@ -1,0 +1,29 @@
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInScale 3s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translate(-50%, -50%);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.05) translate(-50%, -50%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }
+  

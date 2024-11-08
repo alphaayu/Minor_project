@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2e3b4e;
+    color: white;
+  }
+  .home{
+    text-align: left;
+  }
+  
+  
+  h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+  }
+  .logo{
+    color: white;
+
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  

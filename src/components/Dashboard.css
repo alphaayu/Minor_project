@@ -1,0 +1,43 @@
+/* Dashboard.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color for the dashboard */
+}
+
+.top-row, .middle-row, .bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 300px; /* Ensures that each chart has a minimum width */
+    max-width: 48%;
+    margin: 10px 0;
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333333;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .top-row, .middle-row, .bottom-row {
+        flex-direction: column;
+    }
+
+    .chart-container {
+        max-width: 100%;
+    }
+}
