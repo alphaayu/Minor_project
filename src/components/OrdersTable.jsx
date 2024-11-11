@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
-import mockData from "../mockData.jsx";
+
 
 const getColorScheme = (action) => {
   switch (action) {
@@ -29,7 +29,7 @@ const getActionLabel = (status) => {
   }
 };
 
-const OrdersTable = () => (
+const OrdersTable = ({orders}) => (
   <Table variant="simple">
     <Thead>
       <Tr>
@@ -45,7 +45,7 @@ const OrdersTable = () => (
       </Tr>
     </Thead>
     <Tbody>
-      {mockData.map((order, index) => (
+      {orders.map((order, index) => (
         <Tr key={index}>
           <Td>{order.productItems}</Td>
           <Td>{order.itemsNo}</Td>

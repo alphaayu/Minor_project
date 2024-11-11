@@ -1,4 +1,3 @@
-// src/components/AddOrderModal.jsx
 import React, { useState } from "react";
 import {
   Modal,
@@ -12,10 +11,9 @@ import {
   FormControl,
   FormLabel,
   Input,
-  // useDisclosure,
 } from "@chakra-ui/react";
 
-const AddOrderModal = ({ isOpen, onClose }) => {
+const AddOrderModal = ({ isOpen, onClose, addNewOrder }) => {
   const initialRef = React.useRef();
   const [formData, setFormData] = useState({
     productItems: "",
@@ -26,6 +24,7 @@ const AddOrderModal = ({ isOpen, onClose }) => {
     quantity: "",
     price: "",
     paid: "",
+    action: "Pending", // Default action status
   });
 
   const handleChange = (e) => {
@@ -34,22 +33,29 @@ const AddOrderModal = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = () => {
-    // Handle form submission logic here
-    console.log("Form data:", formData);
-    onClose();
+    addNewOrder(formData); // Pass the formData to addNewOrder
+    onClose(); // Close the modal
+    setFormData({ // Reset the form fields
+      productItems: "",
+      itemsNo: "",
+      incoming: "",
+      category: "",
+      date: "",
+      quantity: "",
+      price: "",
+      paid: "",
+      action: "Pending",
+    });
   };
 
   return (
-    <Modal
-      initialFocusRef={initialRef}
-      isOpen={isOpen}
-      onClose={onClose}
-    >
+    <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Add New Order</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
+          {/* Repeat FormControl for each field */}
           <FormControl>
             <FormLabel>Product Items</FormLabel>
             <Input
@@ -60,10 +66,10 @@ const AddOrderModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
             />
           </FormControl>
-
+          {/* Add remaining FormControls similarly */}
           <FormControl mt={4}>
-            <FormLabel>Items No</FormLabel>
-            <Input
+             <FormLabel>Items No</FormLabel>
+             <Input
               placeholder="Items No"
               name="itemsNo"
               value={formData.itemsNo}
