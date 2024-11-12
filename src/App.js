@@ -10,7 +10,7 @@ import Overview from "./components/Overview.jsx"; // Import Overview component
 import Reports from "./components/Reports2.jsx"; // Import Reports component
 import "./App.css";
 import Forecast from "./components/Forecast.jsx";
-
+import Chatbot from "./components/Chatbot.jsx"
 function App() {
   return (
     <Router>
@@ -28,6 +28,7 @@ function App() {
             <Route path="/overview" element={<Overview />} />{" "}
             
             <Route path="/reports" element={<Reports />} />{" "}
+            <Route path="/chatbot" element={<Chatbot />} />{" "}
             
           </Routes>
         </main>

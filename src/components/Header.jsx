@@ -17,6 +17,7 @@ const Header = () => {
         <Link to="/order">Order</Link>
         <Link to="/tracking">Tracking</Link>
         <Link to="/forecasting">Forecasting</Link>
+        <Link to="/Chatbot">Chatbot</Link>
         {/* <Link to="/Signup">Signup</Link> */}
         {/* <Link to="/login">Login</Link> */}
       </nav>
